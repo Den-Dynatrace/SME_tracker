@@ -45,17 +45,17 @@ MongoClient.connect(url, function(err, db) {
 });
 */
 
-MongoClient.connect(url).then((client) => {
-  const connect = client.db()
-  connect.listCollections().toArray(function(err, names) {   
-      if(!err) {
-        for (let item in names){
-          console.log(names[item])
-      };
-    }
-  });
-}).catch((err) => {
 
-  // Printing the error message
-  console.log(err.Message);
-})
+/*
+MongoClient.connect(url, function(err, db) {
+  const connect = db.db()
+  connect.listCollections().toArray(function(err, names) {   
+      if(err) throw err;
+      for (let item in names){
+        console.log(names[item])
+      };
+    });
+  });
+*/
+
+
