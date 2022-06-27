@@ -1,5 +1,26 @@
 {
   "dependencies": {
-    "mongodb": "^4.7.0"
-  }
+    "mongodb": "^4.7.0",
+    "passport-azure-ad": "^4.3.3"
+  },
+  "name": "sme_tracker",
+  "version": "1.0.0",
+  "main": "db_basics.js",
+  "devDependencies": {},
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den-Dynatrace/SME_tracker.git"
+  },
+  "author": "Erik Sundblad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den-Dynatrace/SME_tracker/issues"
+  },
+  "homepage": "https://github.com/Den-Dynatrace/SME_tracker#readme",
+  "description": "Sme Tracker tool"
 }
