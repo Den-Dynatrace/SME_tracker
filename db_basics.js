@@ -65,7 +65,8 @@ MongoClient.connect(url, function(err, db) {
     "_id" : "Sundblad, Erik",
     "Department" : "Dynatrace ONE",
     "Position": "Company Intern",
-    " Number" : 305576
+    " Number" : 305576,
+    "Languages": ["English", "Spanish"]
   }
 
   if (err) throw err;
