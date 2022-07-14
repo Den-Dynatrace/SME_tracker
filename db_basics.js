@@ -1,6 +1,6 @@
-var mongo = require('mongodb');
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/SME";
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://admin:Einstein4@cluster0.hqxio3m.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 testing_eriks_docs = [
   {"Overall" : "Content and lab dev",
@@ -47,6 +47,17 @@ testing_eriks_docs = [
 }
 ]
 
+//INSERT ONE//
+client.connect(err => {
+  const collection = client.db("SME_Tracker").collection("Erik.Sundblad");
+  if (err) throw err;
+  collection.insertMany(testing_eriks_docs, function(err, res){
+      if (err) throw err;
+      console.log("Inserted Docs");
+  });
+  
+});
+/*
 //INJECT ONE//
 MongoClient.connect(url, function(err, db) {
   const Simon = ["Jordyn.Corenman", "Jarred.Mckay", "Chris.Nodine", "Erik.Sundblad"];
@@ -76,13 +87,14 @@ MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     console.log("Inserted Docs");
   });
+  */
   /*for (let emp in Simon){
     emps.collection(Simon[emp]).insertOne(doc, function(err, res){
       if (err) throw err;
       console.log("Inserted Doc");
       db.close();
     });
-  };*/
+  };
 });
 
 /*
