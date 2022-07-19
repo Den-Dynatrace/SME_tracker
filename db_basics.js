@@ -47,11 +47,31 @@ testing_eriks_docs = [
 }
 ]
 
+var doc =[{ 
+  "Overall" : "Content and lab dev",
+  "Sub-Cat" : "Assist in building lab enviroments",
+  "metric" : "# of others using labs",
+  "value" : 1,
+  "Proof" : "pdf_path",
+  "Notes" : "This would be for notes on the file",
+  "Tag" : "Azure"
+  },
+
+   id_doc = {
+    "_id" : "Sundblad, Erik",
+    "id_card": "ID Card",
+    "Department" : "Dynatrace ONE",
+    "Position": "Company Intern",
+    " Number" : 305576,
+    "Languages": ["English", "Spanish"]
+  }
+]
+
 //INSERT ONE//
 client.connect(err => {
   const collection = client.db("SME_Tracker").collection("Erik.Sundblad");
   if (err) throw err;
-  collection.insertMany(testing_eriks_docs, function(err, res){
+  collection.insertMany(doc, function(err, res){
       if (err) throw err;
       console.log("Inserted Docs");
   });
@@ -61,8 +81,8 @@ client.connect(err => {
 //INJECT ONE//
 MongoClient.connect(url, function(err, db) {
   const Simon = ["Jordyn.Corenman", "Jarred.Mckay", "Chris.Nodine", "Erik.Sundblad"];
-  var doc ={
-  //"_id":, 
+  var doc =[{
+  "id_card":, 
   "Overall" : "Content and lab dev",
   "Sub-Cat" : "Assist in building lab enviroments",
   "metric" : "# of others using labs",
@@ -70,7 +90,7 @@ MongoClient.connect(url, function(err, db) {
   "Proof" : "pdf_path",
   "Notes" : "This would be for notes on the file",
   "Tag" : "Azure"
-  };
+  },
 
   var id_doc = {
     "_id" : "Sundblad, Erik",
@@ -79,6 +99,7 @@ MongoClient.connect(url, function(err, db) {
     " Number" : 305576,
     "Languages": ["English", "Spanish"]
   }
+]
 
   if (err) throw err;
   var emps = db.db();
